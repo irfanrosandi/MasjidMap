@@ -55,7 +55,7 @@ public class MapActivity extends FragmentActivity {
             map.addMarker(new MarkerOptions()
                             .position(latlngRumah)
                             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-                            .title("I'm here..")
+                            .title("Rumah gua")
                             .snippet("Jalan Blang Malo")
             );
 
