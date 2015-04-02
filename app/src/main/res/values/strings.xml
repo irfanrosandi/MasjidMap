@@ -6,4 +6,5 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_random_place">Random Place</string>
 </resources>

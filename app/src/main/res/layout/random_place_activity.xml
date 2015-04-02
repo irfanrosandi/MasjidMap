@@ -4,26 +4,20 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.irfanrosandi.masjidmap.MainActivity">
+    tools:context="com.irfanrosandi.masjidmap.RandomPlaceActivity">
 
     <TextView
-        android:id="@+id/tvWelcome"
-        android:text="Welcome to main activity"
+        android:id="@+id/tvCity"
+        android:text="City"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btnViewMap"
-        android:layout_below="@id/tvWelcome"
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="View Map"/>
-
-    <Button
-        android:id="@+id/btnRandomPlace"
-        android:layout_below="@id/btnViewMap"
-        android:text="Random Place"
+        android:id="@+id/btnRandom"
+        android:layout_below="@id/tvCity"
+        android:text="Random"
         android:layout_width="match_parent"
         android:layout_height="70dp" />
 
