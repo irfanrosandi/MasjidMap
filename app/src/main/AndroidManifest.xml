@@ -91,7 +91,7 @@
             android:value="AIzaSyCA9JRBrFs3jdx7x3iIUL7fTxTleMtK2Sw" />
 
         <activity
-            android:name=".ListCityActivity"
+            android:name=".NewsFeedActivity"
             android:label="@string/title_activity_list_city"
             android:parentActivityName=".MainActivity" >
             <meta-data

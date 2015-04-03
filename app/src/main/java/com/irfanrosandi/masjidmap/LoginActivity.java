@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 public class LoginActivity extends ActionBarActivity {
 
     Button btnLogin, btnAbout;
@@ -29,7 +30,7 @@ public class LoginActivity extends ActionBarActivity {
             public void onClick(View v) {
 
                 nama = etNama.getText().toString();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent("com.irfanrosandi.masjidmap.MainActivity");
                 intent.putExtra("keyNama", nama);
                 startActivity(intent);
             }
