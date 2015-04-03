@@ -24,13 +24,14 @@ public class RandomPlaceActivity extends ActionBarActivity {
 
         btnRandom = (Button) findViewById(R.id.btnRandom);
         tvCity = (TextView) findViewById(R.id.tvCity);
+        final String[] city = {"Medan", "Jakarta", "Bandung", "Surabaya", "Lhokseumawe", "Palembang", "Bekasi"};
 
         btnRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Random random = new Random();
-                final String[] city = {"Medan", "Jakarta", "Bandung", "Surabaya", "Lhokseumawe", "Palembang", "Bekasi"};
+
                 int randomNumber = random.nextInt(city.length);
 
                 tvCity.setText(city[randomNumber]);

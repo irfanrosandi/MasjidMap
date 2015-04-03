@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
-    TextView tvWelcome;
-    String nama;
-    Button btnViewMap, btnRandomPlace;
+    private TextView tvWelcome;
+    private String nama;
+    private Button btnViewMap, btnRandomPlace, btnListCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class MainActivity extends ActionBarActivity {
         tvWelcome = (TextView) findViewById(R.id.tvWelcome);
         btnViewMap = (Button) findViewById(R.id.btnViewMap);
         btnRandomPlace = (Button) findViewById(R.id.btnRandomPlace);
+        btnListCity = (Button) findViewById(R.id.btnListCity);
 
         Intent intent = getIntent();
         nama = intent.getStringExtra("keyNama");
@@ -43,6 +44,14 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent("com.irfanrosandi.masjidmap.RandomPlaceActivity");
+                startActivity(intent);
+            }
+        });
+
+        btnListCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListCityActivity.class);
                 startActivity(intent);
             }
         });
