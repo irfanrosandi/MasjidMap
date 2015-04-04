@@ -2,11 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
     tools:context="com.irfanrosandi.masjidmap.NewsFeedActivity">
+
+    <Button
+        android:id="@+id/btnNewBroadcast"
+        android:text="New Broadcast"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:layout_height="70dp" />
 
     <ListView
         android:id="@+id/lvCity"
+        android:layout_below="@id/btnNewBroadcast"
         android:divider="#eee"
         android:dividerHeight="1dp"
         android:layout_width="match_parent"
