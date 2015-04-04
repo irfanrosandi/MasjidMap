@@ -97,7 +97,7 @@
                 android:value=".TimelineActivity" />
         </activity>
         <activity
-            android:name=".HasilBroadcastActivity"
+            android:name=".TimelineDetailActivity"
             android:label="@string/title_activity_hasil_broadcast" >
         </activity>
     </application>

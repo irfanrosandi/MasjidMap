@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -18,7 +15,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class HasilBroadcastActivity extends Activity {
+public class TimelineDetailActivity extends Activity {
 
 
     private GoogleMap map;
@@ -29,7 +26,7 @@ public class HasilBroadcastActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hasil_broadcast);
+        setContentView(R.layout.timeline_detail_activity);
 
         if(terkoneksiInternet()){
             // Cek apakah map ada apa tidak

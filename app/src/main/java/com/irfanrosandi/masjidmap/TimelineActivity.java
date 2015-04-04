@@ -35,7 +35,7 @@ public class TimelineActivity extends Activity {
                 //String judul = String.valueOf(parent.getItemAtPosition(position));
                 //Toast.makeText(getApplicationContext(), judul, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(TimelineActivity.this, HasilBroadcastActivity.class);
+                Intent intent = new Intent(TimelineActivity.this, TimelineDetailActivity.class);
                 startActivity(intent);
             }
         });
