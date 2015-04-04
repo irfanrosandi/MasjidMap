@@ -81,7 +81,7 @@
             android:value="AIzaSyCA9JRBrFs3jdx7x3iIUL7fTxTleMtK2Sw" />
 
         <activity
-            android:name=".NewsFeedActivity"
+            android:name=".TimelineActivity"
             android:label="@string/title_activity_list_city"
             android:parentActivityName=".MainActivity" >
             <meta-data
@@ -91,10 +91,10 @@
         <activity
             android:name=".NewBroadcastActivity"
             android:label="@string/title_activity_new_broadcast"
-            android:parentActivityName=".NewsFeedActivity" >
+            android:parentActivityName=".TimelineActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.irfanrosandi.masjidmap.NewsFeedActivity" />
+                android:value=".TimelineActivity" />
         </activity>
         <activity
             android:name=".HasilBroadcastActivity"

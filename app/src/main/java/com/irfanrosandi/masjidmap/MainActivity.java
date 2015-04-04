@@ -12,7 +12,7 @@ public class MainActivity extends ActionBarActivity {
 
     private TextView tvWelcome;
     private String nama;
-    private Button btnViewMap, btnRandomPlace, btnListCity;
+    private Button btnViewMap, btnRandomPlace, btnTimeline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
         tvWelcome = (TextView) findViewById(R.id.tvWelcome);
         btnViewMap = (Button) findViewById(R.id.btnViewMap);
         btnRandomPlace = (Button) findViewById(R.id.btnRandomPlace);
-        btnListCity = (Button) findViewById(R.id.btnListCity);
+        btnTimeline = (Button) findViewById(R.id.btnTimeline);
 
         Intent intent = getIntent();
         nama = intent.getStringExtra("keyNama");
@@ -45,10 +45,10 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        btnListCity.setOnClickListener(new View.OnClickListener() {
+        btnTimeline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NewsFeedActivity.class);
+                Intent intent = new Intent(MainActivity.this, TimelineActivity.class);
                 startActivity(intent);
             }
         });

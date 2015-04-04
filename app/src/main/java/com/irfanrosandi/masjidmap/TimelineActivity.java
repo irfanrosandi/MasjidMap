@@ -8,10 +8,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 
-public class NewsFeedActivity extends Activity {
+public class TimelineActivity extends Activity {
 
     private ListView lvCity;
     private Button btnNewBroadcast;
@@ -19,7 +18,7 @@ public class NewsFeedActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.news_feed_activity);
+        setContentView(R.layout.timeline_activity);
 
         lvCity = (ListView) findViewById(R.id.lvCity);
         btnNewBroadcast = (Button) findViewById(R.id.btnNewBroadcast);
@@ -36,7 +35,7 @@ public class NewsFeedActivity extends Activity {
                 //String judul = String.valueOf(parent.getItemAtPosition(position));
                 //Toast.makeText(getApplicationContext(), judul, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(NewsFeedActivity.this, HasilBroadcastActivity.class);
+                Intent intent = new Intent(TimelineActivity.this, HasilBroadcastActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +43,7 @@ public class NewsFeedActivity extends Activity {
         btnNewBroadcast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NewsFeedActivity.this, NewBroadcastActivity.class);
+                Intent intent = new Intent(TimelineActivity.this, NewBroadcastActivity.class);
                 startActivity(intent);
             }
         });

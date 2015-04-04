@@ -57,7 +57,7 @@ public class MapActivity extends FragmentActivity {
         }
     }
 
-    protected boolean terkoneksiInternet(){
+    private boolean terkoneksiInternet(){
         ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
 
