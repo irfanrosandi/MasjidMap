@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="#fff"
     tools:context="com.irfanrosandi.masjidmap.HasilBroadcastActivity">
 
     <RelativeLayout
@@ -15,22 +16,20 @@
 
         <ImageView
             android:id="@+id/ivAvatarHasil"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/avatar"/>
 
         <TextView
             android:id="@+id/tvUsernameHasil"
             android:text="username"
-            android:layout_marginTop="5dp"
             android:layout_below="@id/ivAvatarHasil"
-            android:layout_width="70dp"
-            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvJudulHasil"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:textSize="17sp"
             android:textStyle="bold"
             android:layout_toRightOf="@id/ivAvatarHasil"
@@ -59,7 +58,7 @@
         <Button
             android:id="@+id/btnVoteUp"
             android:text="Vote Up (0)"
-            android:layout_width="100dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content" />
 
         <Button
@@ -67,7 +66,7 @@
             android:layout_marginLeft="15dp"
             android:text="Vote Down (0)"
             android:layout_toRightOf="@id/btnVoteUp"
-            android:layout_width="120dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content" />
 
     </RelativeLayout>

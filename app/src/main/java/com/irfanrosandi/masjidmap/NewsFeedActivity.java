@@ -33,8 +33,11 @@ public class NewsFeedActivity extends Activity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String judul = String.valueOf(parent.getItemAtPosition(position));
-                Toast.makeText(getApplicationContext(), judul, Toast.LENGTH_SHORT).show();
+                //String judul = String.valueOf(parent.getItemAtPosition(position));
+                //Toast.makeText(getApplicationContext(), judul, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(NewsFeedActivity.this, HasilBroadcastActivity.class);
+                startActivity(intent);
             }
         });
 
