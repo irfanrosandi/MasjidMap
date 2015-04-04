@@ -32,12 +32,7 @@ public class MapActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_activity);
 
-        // Cek terkoneksi internet apa tidak
-        ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
-
-        if(networkInfo != null && networkInfo.isConnected()){
-
+        if(terkoneksiInternet()){
             // Cek apakah map ada apa tidak
             if(map == null){
                 map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
@@ -57,14 +52,18 @@ public class MapActivity extends FragmentActivity {
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(posisiRumah, 15));
             map.setMyLocationEnabled(true);
         }
-        else{
+        else if(!terkoneksiInternet()){
             Toast.makeText(getApplicationContext(), "Pastikan smartphone nya terkoneksi ke internet bro..", Toast.LENGTH_SHORT).show();
         }
     }
 
-    /*
     protected boolean terkoneksiInternet(){
+        ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
 
-    } */
-
+        if(networkInfo != null && networkInfo.isConnected())
+            return true;
+        else
+            return false;
+    }
 }
