@@ -1,12 +1,22 @@
 package com.irfanrosandi.masjidmap;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
 
-public class HasilBroadcastActivity extends ActionBarActivity {
+
+public class HasilBroadcastActivity extends Activity {
+
+
+    private GoogleMap map;
+    private double latitude = 3.58429903;
+    private double longitude = 98.66441488;
+    private LatLng posisiRumah = new LatLng(latitude, longitude);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,25 +24,4 @@ public class HasilBroadcastActivity extends ActionBarActivity {
         setContentView(R.layout.hasil_broadcast);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_hasil_broadcast, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

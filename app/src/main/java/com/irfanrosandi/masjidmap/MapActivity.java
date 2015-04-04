@@ -20,14 +20,12 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-
 public class MapActivity extends FragmentActivity {
 
     private GoogleMap map;
     private double latitude = 3.58429903;
     private double longitude = 98.66441488;
-
-    private LatLng latlngRumah = new LatLng(latitude, longitude);
+    private LatLng posisiRumah = new LatLng(latitude, longitude);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,26 +47,24 @@ public class MapActivity extends FragmentActivity {
                 }
             }
 
-            map.setMyLocationEnabled(true);
-
-            // Add marker pada map
             map.addMarker(new MarkerOptions()
-                            .position(latlngRumah)
+                            .position(posisiRumah)
                             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
                             .title("Rumah gua")
                             .snippet("Jalan Blang Malo")
             );
 
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(latlngRumah, 15));
-
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(posisiRumah, 15));
+            map.setMyLocationEnabled(true);
         }
         else{
             Toast.makeText(getApplicationContext(), "Pastikan smartphone nya terkoneksi ke internet bro..", Toast.LENGTH_SHORT).show();
         }
-
-
-
-
     }
+
+    /*
+    protected boolean terkoneksiInternet(){
+
+    } */
 
 }

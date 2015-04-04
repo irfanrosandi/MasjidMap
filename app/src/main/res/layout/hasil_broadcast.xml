@@ -43,7 +43,7 @@
             android:id="@+id/ivPhotoHasil"
             android:layout_below="@id/containerTop"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="50dp"
             android:src="@drawable/avatar"
             android:layout_centerHorizontal="true"/>
 
@@ -85,8 +85,12 @@
             android:text="@string/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
     </RelativeLayout>
 
-
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:name="com.google.android.gms.maps.MapFragment"
+        tools:layout="@layout/map_activity" />
 </RelativeLayout>
