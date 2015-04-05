@@ -12,7 +12,7 @@ public class MainActivity extends ActionBarActivity {
 
     private TextView tvWelcome;
     private String nama;
-    private Button btnViewMap, btnTimeline;
+    private Button btnViewMap, btnTimeline, btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class MainActivity extends ActionBarActivity {
         tvWelcome = (TextView) findViewById(R.id.tvWelcome);
         btnViewMap = (Button) findViewById(R.id.btnViewMap);
         btnTimeline = (Button) findViewById(R.id.btnTimeline);
+        btnLogout = (Button) findViewById(R.id.btnLogout);
 
         Intent intent = getIntent();
         nama = intent.getStringExtra("keyNama");
@@ -40,6 +41,14 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TimelineActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
