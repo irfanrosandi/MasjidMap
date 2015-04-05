@@ -5,105 +5,118 @@
     android:background="#fff"
     tools:context="com.irfanrosandi.masjidmap.TimelineDetailActivity">
 
-    <RelativeLayout
-        android:id="@+id/containerTop"
-        android:layout_marginBottom="20dp"
-        android:background="#ff25456e"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/containerAvatar"
-            android:layout_width="70dp"
-            android:layout_height="70dp">
+            android:id="@+id/containerMain"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/containerTop"
+                android:background="#ff25456e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/containerAvatar"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp">
+
+                    <ImageView
+                        android:id="@+id/ivAvatar"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/avatar"/>
+
+                    <TextView
+                        android:id="@+id/tvUsername"
+                        android:text="irfanrosandi"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/ivAvatar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvJudulHasil"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:layout_toRightOf="@id/containerAvatar"
+                    android:text="Donor Darah Dapat Tupperware Di Carefour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
 
             <ImageView
-                android:id="@+id/ivAvatar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/avatar"/>
+                android:id="@+id/ivPhoto"
+                android:layout_below="@id/containerTop"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/avatar"
+                android:background="#333"
+                android:layout_centerHorizontal="true"/>
 
-            <TextView
-                android:id="@+id/tvUsername"
-                android:text="irfanrosandi"
-                android:textColor="#fff"
-                android:textSize="12sp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/ivAvatar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:id="@+id/containerVote"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/ivPhoto"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnVoteUp"
+                    android:textColor="#ff6bc742"
+                    android:text="Vote Up (0)"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnVoteDown"
+                    android:textColor="#fff03157"
+                    android:layout_marginLeft="15dp"
+                    android:text="Vote Down (0)"
+                    android:layout_toRightOf="@id/btnVoteUp"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/containerBottom"
+                android:layout_below="@id/containerVote"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:text="@string/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:lineSpacingExtra="8dp"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"/>
+
+                <fragment
+                    android:id="@+id/map"
+                    android:layout_below="@id/tvDescription"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:name="com.google.android.gms.maps.MapFragment"
+                    tools:layout="@layout/timeline_detail_activity"></fragment>
+
+            </RelativeLayout>
         </RelativeLayout>
-
-        <TextView
-            android:id="@+id/tvJudulHasil"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:textColor="#fff"
-            android:layout_toRightOf="@id/containerAvatar"
-            android:text="Donor Darah Dapat Tupperware Di Carefour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/ivPhoto"
-            android:layout_below="@id/containerTop"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/avatar"
-            android:layout_centerHorizontal="true"/>
-
-    <RelativeLayout
-        android:id="@+id/containerVote"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/ivPhoto"
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btnVoteUp"
-            android:text="Vote Up (0)"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btnVoteDown"
-            android:layout_marginLeft="15dp"
-            android:text="Vote Down (0)"
-            android:layout_toRightOf="@id/btnVoteUp"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/containerBottom"
-        android:layout_below="@id/containerVote"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/tvDescription"
-            android:text="@string/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"/>
-
-        <fragment
-            android:id="@+id/map"
-            android:layout_below="@id/tvDescription"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:name="com.google.android.gms.maps.MapFragment"
-            tools:layout="@layout/timeline_detail_activity"></fragment>
-    </RelativeLayout>
-
+    </ScrollView>
 </RelativeLayout>

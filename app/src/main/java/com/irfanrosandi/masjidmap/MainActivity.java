@@ -12,7 +12,7 @@ public class MainActivity extends ActionBarActivity {
 
     private TextView tvWelcome;
     private String nama;
-    private Button btnViewMap, btnRandomPlace, btnTimeline;
+    private Button btnViewMap, btnTimeline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,6 @@ public class MainActivity extends ActionBarActivity {
 
         tvWelcome = (TextView) findViewById(R.id.tvWelcome);
         btnViewMap = (Button) findViewById(R.id.btnViewMap);
-        btnRandomPlace = (Button) findViewById(R.id.btnRandomPlace);
         btnTimeline = (Button) findViewById(R.id.btnTimeline);
 
         Intent intent = getIntent();
@@ -34,14 +33,6 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intentBukaMapActivity = new Intent("com.irfanrosandi.masjidmap.MapActivity");
                 startActivity(intentBukaMapActivity);
-            }
-        });
-
-        btnRandomPlace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent("com.irfanrosandi.masjidmap.RandomPlaceActivity");
-                startActivity(intent);
             }
         });
 

@@ -61,20 +61,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.irfanrosandi.masjidmap.MainActivity" />
         </activity>
-        <activity
-            android:name=".RandomPlaceActivity"
-            android:label="@string/title_activity_random_place"
-            android:parentActivityName=".MainActivity" >
-            <intent-filter>
-                <action android:name="com.irfanrosandi.masjidmap.RandomPlaceActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.irfanrosandi.masjidmap.MainActivity" />
-        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

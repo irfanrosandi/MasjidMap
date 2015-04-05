@@ -13,31 +13,54 @@
 
         <TextView
             android:id="@+id/tvWelcome"
+            android:textSize="18sp"
             android:text="Welcome to main activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btnViewMap"
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_marginTop="140dp"
+            android:text="City : -"
+            android:textSize="28sp"
             android:layout_below="@id/tvWelcome"
-            android:layout_marginTop="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="View Map"/>
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/btnRandomPlace"
-            android:layout_below="@id/btnViewMap"
-            android:text="Random Place"
-            android:layout_width="match_parent"
-            android:layout_height="70dp" />
+            android:id="@+id/btnRefresh"
+            android:layout_below="@id/tvCity"
+            android:layout_centerHorizontal="true"
+            android:text="Refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btnTimeline"
+        <RelativeLayout
+            android:id="@+id/containerButton"
+            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="Timeline"
-            android:layout_below="@id/btnRandomPlace"/>
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnTimeline"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="Timeline" />
+
+            <Button
+                android:id="@+id/btnViewMap"
+                android:layout_below="@id/btnTimeline"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="View Map"/>
+
+        </RelativeLayout>
+
+
+
+
     </RelativeLayout>
 
 </RelativeLayout>
