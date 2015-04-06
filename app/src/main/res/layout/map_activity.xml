@@ -4,44 +4,11 @@
     android:layout_height="match_parent"
     tools:context="com.irfanrosandi.masjidmap.MapActivity">
 
-    <RelativeLayout
-        android:id="@+id/rlContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_marginBottom="30dp">
-
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:layout_marginBottom="15dp"
-            android:text="Ane Menemuukan Harta Karun Gan!"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvTitle"
-            android:textSize="15sp"
-            android:text="Halo gan, ini adalah peta harta karun dimana isinya adalah emas sebesar 59 TON, hmm lumayan tuh kalo di jual bisa pergi haji se kecamatan"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlMap"
-        android:layout_below="@id/rlContent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
         <fragment
             android:id="@+id/map"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="match_parent"
             android:name="com.google.android.gms.maps.MapFragment"
             tools:layout="@layout/map_activity" />
-    </RelativeLayout>
 
  </RelativeLayout>
