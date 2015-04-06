@@ -31,7 +31,7 @@
             <TextView
                 android:id="@+id/tvEnterName"
                 android:layout_marginTop="10dp"
-                android:text="Enter your name : "
+                android:text="Enter Username : "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
