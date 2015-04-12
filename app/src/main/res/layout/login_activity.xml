@@ -28,16 +28,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvEnterName"
-                android:layout_marginTop="10dp"
-                android:text="Enter your name : "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
             <EditText
-                android:layout_toRightOf="@id/tvEnterName"
                 android:id="@+id/etEnterName"
+                android:hint="Enter your name"
+                android:maxLines="1"
+                android:textColorHint="#3e353535"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
@@ -50,7 +46,7 @@
 
             <Button
                 android:id="@+id/btnLogin"
-                android:text="udah diubah"
+                android:text="Login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

@@ -21,7 +21,7 @@
         <TextView
             android:id="@+id/tvCity"
             android:layout_marginTop="140dp"
-            android:text="udah diubasdfsdfsh"
+            android:text="My City : -"
             android:textSize="28sp"
             android:layout_below="@id/tvWelcome"
             android:layout_centerHorizontal="true"
