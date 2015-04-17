@@ -32,7 +32,7 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -86,6 +86,10 @@
         <activity
             android:name=".TimelineDetailActivity"
             android:label="@string/title_activity_hasil_broadcast" >
+        </activity>
+        <activity
+            android:name=".ActivityMyCity"
+            android:label="@string/title_activity_activity_my_city" >
         </activity>
     </application>
 
