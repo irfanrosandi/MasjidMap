@@ -16,18 +16,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.model.LatLng;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
+import rx.functions.Action1;
 
 public class MainActivity extends ActionBarActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
-    private TextView tvWelcome;
-    private String nama;
-    private Button btnViewMap, btnTimeline, btnLogout, btnSetCity;
+    private String nama, city;
+    private double myLat, myLng;
+
+    private TextView tvLatLng, tvCity;
+    private Button btnTimeline, btnLogout, btnSetCity;
     private AlertDialog.Builder alertDialogBuilder;
 
     @Override
@@ -35,31 +42,49 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        tvWelcome = (TextView) findViewById(R.id.tvWelcome);
-        btnViewMap = (Button) findViewById(R.id.btnViewMap);
+        tvLatLng = (TextView) findViewById(R.id.tvLatLng);
+        tvCity = (TextView) (findViewById(R.id.tvCity));
         btnTimeline = (Button) findViewById(R.id.btnTimeline);
         btnLogout = (Button) findViewById(R.id.btnLogout);
         btnSetCity = (Button) findViewById(R.id.btnSetCity);
 
         ambilDataIntent();
 
-        tvWelcome.setText("Hi " + nama + ", Welcome to the App!");
-
-
         btnSetCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ActivityMyCity.class);
-                startActivity(intent);
-            }
-        });
 
+                // getting my latitude and my longitude
+                ReactiveLocationProvider locationProvider = new ReactiveLocationProvider(getApplicationContext());
+                locationProvider.getLastKnownLocation()
+                        .subscribe(new Action1<Location>() {
+                            @Override
+                            public void call(Location location) {
+                                myLat = location.getLatitude();
+                                myLng = location.getLongitude();
+                                tvLatLng.setText("Lat : " + myLat + " Lng : " + myLng);
+                            }
+                        });
 
-        btnViewMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentBukaMapActivity = new Intent("com.irfanrosandi.masjidmap.MapActivity");
-                startActivity(intentBukaMapActivity);
+                // convert my latitude and longitude to a city name
+                Geocoder mGeocoder = new Geocoder(getApplicationContext());
+
+                ArrayList<Address> addresses = null;
+                try {
+                    addresses = (ArrayList<Address>) mGeocoder.getFromLocation(3.5833, 98.6667, 1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (addresses != null && addresses.size() > 0) {
+                    city = addresses.get(0).getLocality();
+                    tvCity.setText(city);
+                }
+                else if (addresses.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "address returns empty", Toast.LENGTH_SHORT).show();
+                }
+                else if(addresses == null){
+                    Toast.makeText(getApplicationContext(), "address returns null", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

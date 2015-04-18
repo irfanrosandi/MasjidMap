@@ -87,10 +87,6 @@
             android:name=".TimelineDetailActivity"
             android:label="@string/title_activity_hasil_broadcast" >
         </activity>
-        <activity
-            android:name=".ActivityMyCity"
-            android:label="@string/title_activity_activity_my_city" >
-        </activity>
     </application>
 
 </manifest>
